@@ -5,8 +5,14 @@
     max-width: 100%;
 }
 
+
+
 body {
-    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    min-height: 100vh;
 }
 
 html {
@@ -97,16 +103,12 @@ html {
     padding-left: 5%; /* Añade un pequeño espacio entre la imagen y el texto */
 }
 
-.section1-text h1 {
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 /* ------------ SECTION-2 ------------ */
 
 .section-2 {
-    background-color: orange;
     height: 40vh;
     width: 100vw;
     display: flex;
@@ -115,14 +117,137 @@ html {
 }
 
 .section2-container {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Ajusta según el ancho deseado */
+    display: flex; /* Asegura que los elementos hijos (imagen y texto) estén en línea uno al lado del otro */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
+    align-items: center; /* Centra verticalmente los elementos hijos */
+    width: 80%; /* Ajusta según el ancho deseado */
     height: 100%; /* Ajusta según la altura deseada */
-    border-radius: 20px; /* Bordes redondeados más pronunciados */
-    box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%); /* Sombra mejorada */
-    padding: 20px; /* Padding interno para espaciar el contenido del borde */
+    border-radius: 20px; /* Bordes redondeados */
     overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.section2-image {
+    width: 40%; /* La imagen ocupa el 40% del ancho del contenedor */
+    height: 100%; /* La imagen ocupará todo el alto del contenedor */
+    overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+}
+
+.section2-image img {
+    width: 100%; /* La imagen ocupará todo el ancho del contenedor asignado */
+    height: 100%; /* La imagen ocupará todo el alto del contenedor asignado */
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    border-radius: 15px; /* Bordes redondeados en la imagen */
+}
+
+.section2-text {
+    width: 55%; /* Texto ocupa el 55% del ancho del contenedor */
+    padding-left: 5%; /* Añade un pequeño espacio entre la imagen y el texto */
+    color: rgb(0, 0, 0); /* Asegura que el texto sea visible sobre el fondo azul */
+    text-align: left; /* Alinea el texto a la izquierda */
+    display: flex;
+    flex-direction: column; /* Alinea el texto en una columna */
+    justify-content: center; /* Centra el texto verticalmente */
+}
+
+.buy-now-btn {
+    background-color: #FF4500; /* Color naranja brillante para el botón */
+    color: white; /* Texto en blanco */
+    padding: 12px 24px; /* Relleno interno para hacerlo más grande */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita para el texto */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    margin-top: 20px; /* Espacio superior para separarlo del texto */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color al hacer hover */
+    width: 30%;
+}
+
+.buy-now-btn:hover {
+    background-color: #FF6347; /* Color más claro al pasar el cursor */
+}
+
+/* ------------ SECTION-3 ------------ */
+
+.section-3 {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 20px; 
+}
+
+.articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+article {
+    position: relative;
+    border-radius: 16px;
+    transition: all 0.4s ease-in-out;
+    padding: 16px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+}
+
+article h2 {
+    margin: 0 0 12px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.8rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.article-body ul {
+    list-style-type: disc; 
+    padding-left: 20px; 
+    margin-bottom: 0; 
+}
+
+.article-body ul li {
+    margin-bottom: 8px; 
+    font-size: 1.1rem; 
+    color: #555; 
+}
+
+.article-body {
+    padding: 16px;
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden; 
+    border-radius: 8px; 
+}
+
+article img {
+    width: 100%; 
+    height: 100%; 
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+article:hover img {
+    transform: scale(1.1); 
+}
+
+
+
+@media screen and (max-width: 960px) {
+    .article-body p {
+        display: none;
+    }
 }
