@@ -9,12 +9,16 @@ body {
     font-family: 'Kanit', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* ------------ NAVBAR ------------ */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #334257;
     padding: 20px 0;
     z-index: 1000;
 }
@@ -47,43 +51,78 @@ body {
 /* ------------ SECTION-1 ------------ */
 
 .section-1 {
-    background-color: #f0f0f0;
+    background-color: white;
     height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenedor */
+    align-items: center; /* Centra verticalmente el contenedor */
+    overflow: hidden;
+}
+
+.section1-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Ajusta según el ancho deseado */
+    height: 60%; /* Ajusta según la altura deseada */
+    border-radius: 20px; /* Bordes redondeados más pronunciados */
+    box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%); /* Sombra mejorada */
+    padding: 20px; /* Padding interno para espaciar el contenido del borde */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+}
+
+.section1-image {
+    width: 40%; /* Imagen ocupa el 40% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    overflow: hidden; /* Asegura que la imagen no sobresalga del contenedor */
+    border-radius: 15px; /* Bordes redondeados para la imagen */
+    position: relative; /* Posición relativa para contener el efecto */
+}
+
+.section1-image img {
+    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor asignado */
+    height: auto; /* Mantiene la proporción de la imagen */
+    transition: transform 0.5s ease; /* Transición suave para el zoom */
+    border-radius: 15px; /* Mantiene los bordes redondeados en el zoom */
+}
+
+.section1-image:hover img {
+    transform: scale(1.1); /* Aumenta el tamaño de la imagen al 110% cuando se hace hover */
+}
+
+
+.section1-text {
+    width: 60%; /* Texto ocupa el 60% del ancho del contenedor */
+    padding-left: 5%; /* Añade un pequeño espacio entre la imagen y el texto */
+}
+
+.section1-text h1 {
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ------------ SECTION-2 ------------ */
+
+.section-2 {
+    background-color: orange;
+    height: 40vh;
     width: 100vw;
     display: flex;
     justify-content: center; /* Centra horizontalmente el contenedor */
     align-items: center; /* Centra verticalmente el contenedor */
 }
 
-.section1-container {
-    background-color: orange;
+.section2-container {
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%; /* Ajusta según el ancho deseado */
-    height: 60%; /* Ajusta según la altura deseada */
-    border-radius: 1%;
-}
-
-.section1-image {
-    width: 40%; /* Imagen ocupa el 40% del ancho del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-.section1-image img {
-    width: 100%; /* Asegura que la imagen ocupe el 100% del contenedor asignado */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 1%; /* Opcional: para aplicar bordes redondeados */
-    margin: 5%;
-    overflow: hidden;
-}
-
-.section1-text {
-    width: 60%; /* Texto ocupa el 60% del ancho del contenedor */
-    padding-left: 5%; /* Añade un pequeño espacio entre la imagen y el texto */
-}   
-
-.section1-text h1 {
-    justify-content: center;
-    align-items: center;
+    width: 100%; /* Ajusta según el ancho deseado */
+    height: 100%; /* Ajusta según la altura deseada */
+    border-radius: 20px; /* Bordes redondeados más pronunciados */
+    box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%); /* Sombra mejorada */
+    padding: 20px; /* Padding interno para espaciar el contenido del borde */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
