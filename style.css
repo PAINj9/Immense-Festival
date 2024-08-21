@@ -109,7 +109,7 @@ html {
 /* ------------ SECTION-2 ------------ */
 
 .section-2 {
-    height: 40vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center; /* Centra horizontalmente el contenedor */
@@ -170,7 +170,7 @@ html {
 /* ------------ SECTION-3 ------------ */
 
 .section-3 {
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center; 
@@ -244,10 +244,150 @@ article:hover img {
     transform: scale(1.1); 
 }
 
+.card-btn {
+    background-color: #FF4500; /* Color del botón */
+    color: white; /* Color del texto */
+    padding: 12px 24px; /* Espaciado interno */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    margin-top: 20px; /* Espacio superior para separar del contenido */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    width: 100%; /* Ajusta el ancho del botón */
+    text-align: center; /* Centra el texto dentro del botón */
+}
 
+.card-btn:hover {
+    background-color: #FF6347; /* Color más claro al pasar el cursor */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+}
 
 @media screen and (max-width: 960px) {
     .article-body p {
         display: none;
     }
+}
+
+
+
+/* ------------ SECTION-4 ------------ */
+.section-4 {
+    min-height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.mapa {
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho del viewport */
+    text-align: center; /* Centra el título dentro del contenedor */
+}
+
+.mapa iframe {
+    width: 100%; /* Asegura que el iframe ocupe todo el ancho del contenedor */
+    height: 600px; /* Fija la altura del iframe */
+    border-radius: 15px; /* Opcional: añade bordes redondeados al iframe */
+}
+
+
+/* ------------ Footer ------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.footer body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+.footer *{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 15%;
+  color: #ffffff1c;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }
