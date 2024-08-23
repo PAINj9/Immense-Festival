@@ -25,27 +25,32 @@ html {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #334257;
+    background-color: #1a1f36;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px 0;
-    opacity: 105%;
+    opacity: .95; /* Reducido para menos opacidad */
 }
 
 .navbar-left {
-    margin-left: 20px; /* Ajusta según el espacio que desees a la izquierda */
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    opacity: 1;
 }
 
 .navbar-logo {
-    height: 40px; /* Ajusta la altura del logo */
+    height: 40px;
+    opacity: 1;
+
 }
 
 .navegacion {
     display: flex;
     justify-content: center;
-    flex-grow: 1; /* Permite que la navegación ocupe el espacio restante */
+    flex-grow: 1;
 }
 
 .nav-links {
@@ -59,15 +64,34 @@ html {
 .nav-links li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 19px;
     padding: 8px 16px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-links li a:hover {
-    background-color: #555;
-    border-radius: 4px;
+    color: #007bff;
+    text-shadow: 0 0 10px rgba(0, 123, 255, 0.7);
 }
 
+.navbar-right {
+    margin-right: 20px; /* Puedes ajustar el margen derecho según sea necesario */
+}
+
+.btn-buy-now {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-buy-now:hover {
+    background-color: #0056b3;
+}
 
 
 
@@ -82,30 +106,23 @@ html {
     justify-content: center; /* Centra horizontalmente el contenedor */
     align-items: center; /* Centra verticalmente el contenedor */
     overflow: hidden;
+
 }
-
-
-
 
 .section-1::before {
-    /* background: linear-gradient(135deg, #0d47a1, #9871e6, #ab47bc, #ff4081); */
-
-    background-image: url(images/Foto2.jpg);
+    background-image: url(images/Test3.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(50px); /* Aplica el desenfoque */
-    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
-
-
-
+    filter: blur(80px); /* Aplica el desenfoque */
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    top: -5%; /* Aumenta el tamaño del pseudo-elemento */
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
 }
+
 .section1-container {
     display: flex;
     justify-content: space-between;
@@ -224,14 +241,14 @@ html {
 .section-2::before {
     content: ''; /* Necesario para que el pseudo-elemento se muestre */
     position: absolute; /* Permite que el pseudo-elemento cubra toda la sección */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(images/Foto3.jpg);
+    top: -5%; /* Aumenta el tamaño del pseudo-elemento */
+    left: -5%;
+    right: -5%;
+    bottom: -5%;
+    background-image: url(images/Test2.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(50px); /* Aplica el desenfoque */
+    filter: blur(90px); /* Aplica el desenfoque */
     z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
 }
 .section2-container {
@@ -249,13 +266,23 @@ html {
 .section2-image {
     width: 40%; /* La imagen ocupa el 40% del ancho del contenedor */
     height: 100%; /* La imagen ocupará todo el alto del contenedor */
+    overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
+    border-radius: 15px; /* Bordes redondeados en el contenedor */
+    position: relative; /* Posición relativa para manejar la superposición */
 }
 
 .section2-image img {
-    width: 100%; /* La imagen ocupará todo el ancho del contenedor asignado */
-    height: 100%; /* La imagen ocupará todo el alto del contenedor asignado */
-    object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+    object-position: 59%; /* Mueve el enfoque hacia la derecha */
+    transition: transform 0.5s ease; /* Transición suave para el efecto de zoom y desplazamiento */
+    display: block;
     border-radius: 15px; /* Bordes redondeados en la imagen */
+}
+
+.section2-image:hover img {
+    transform: scale(1.15); /* Zoom suave al hacer hover */
 }
 
 .section2-text {
@@ -272,34 +299,43 @@ html {
     overflow-y: auto; /* Añade scroll si el contenido excede la altura */
 }
 
-.section2-text h2,
-.section2-text h1,
-.section2-text p {
-    margin-bottom: 1rem; /* Espaciado inferior entre los elementos de texto */
-    line-height: 1.3; /* Espaciado entre las líneas de texto */
-}
-
 .section2-text h1 {
+    font-size: 3.5rem;
     margin-top: 1rem; /* Añade espacio superior al título principal */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    letter-spacing: 0.1rem; /* Añade espacio entre letras */
+    color: #73b7ff; /* Cambia el color del título principal */
+    margin-bottom: 1.5rem; /* Aumenta el espaciado inferior */
 }
 
-.buy-now-btn {
-    background-color: #FF4500; /* Color naranja brillante para el botón */
-    color: white; /* Texto en blanco */
-    padding: 12px 24px; /* Relleno interno para hacerlo más grande */
-    border: none; /* Sin bordes */
-    border-radius: 8px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de fuente */
-    font-weight: bold; /* Negrita para el texto */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    margin-top: 20px; /* Espacio superior para separarlo del texto */
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color al hacer hover */
-    width: 30%;
+.section2-text p {
+    font-size: 1.2rem;
+    line-height: 1.6; /* Espaciado entre las líneas de texto */
+    margin-bottom: 1.5rem; /* Espaciado inferior entre el párrafo y el siguiente elemento */
+    color: #f0f0f0; /* Color más claro para el párrafo */
 }
 
-.buy-now-btn:hover {
-    background-color: #FF6347; /* Color más claro al pasar el cursor */
+.section2-text h2 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center; /* Alinea los íconos con el texto */
+    color: #ffffff; /* Color de los subtítulos */
+    margin-bottom: 1.2rem; /* Espaciado inferior */
 }
+
+.text-icon {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: 30px;
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7)); /* Añade una sombra al ícono */
+}
+
+.section2-text h2:hover .text-icon {
+    transform: scale(1.1); /* Efecto de zoom suave al pasar el cursor sobre el subtítulo */
+    transition: transform 0.3s ease; /* Transición suave para el zoom */
+}
+
+
 
 /* ------------ SECTION-3 ------------ */
 
@@ -310,7 +346,26 @@ html {
     justify-content: center; 
     align-items: center;
     padding: 20px; 
+    
 }
+
+.section-3::before {
+
+    background-image: url(images/FondoTest1.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(50px); /* Aplica el desenfoque */
+    z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+
 
 .articles {
     display: grid;
