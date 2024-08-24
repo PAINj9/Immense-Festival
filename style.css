@@ -13,6 +13,8 @@ body {
     font-size: 1.2rem;
     line-height: 1.6rem;
     min-height: 100vh;
+        overflow-x: hidden;
+
 }
 
 html {
@@ -117,11 +119,12 @@ html {
     filter: blur(80px); /* Aplica el desenfoque */
     content: '';
     position: absolute;
-    top: -5%; /* Aumenta el tamaño del pseudo-elemento */
-    left: -5%;
-    right: -5%;
-    bottom: -5%;
+    top: -15%; /* Aumenta el tamaño del pseudo-elemento */
+    left: -15%;
+    right: -45%;
+    bottom: 2%;
     z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    
 }
 
 .section1-container {
@@ -171,13 +174,7 @@ html {
     line-height: 1.2; /* Altura de línea compacta */
 }
 
-.section1-text h2 {
-    font-size: 3rem; /* Tamaño un poco más pequeño para el subtítulo */
-    font-weight: 600; /* Negrita */
-    margin-bottom: 2rem; /* Espacio debajo del subtítulo */
-    line-height: 1.2; /* Altura de línea compacta */
-    color: #777; /* Color gris para el subtítulo */
-}
+
 
 .section1-text p {
     font-size: 1.25rem; /* Tamaño de fuente para el texto */
@@ -244,15 +241,18 @@ html {
 .section-2::before {
     content: ''; /* Necesario para que el pseudo-elemento se muestre */
     position: absolute; /* Permite que el pseudo-elemento cubra toda la sección */
-    top: -5%; /* Aumenta el tamaño del pseudo-elemento */
-    left: -5%;
-    right: -5%;
+    top: 7%; /* Aumenta el tamaño del pseudo-elemento */
+    left: -15%;
+    right: -25%;
     bottom: -5%;
+    
     background-image: url(images/Test2.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(90px); /* Aplica el desenfoque */
+    filter: blur(70px); /* Aplica el desenfoque */
     z-index: -1; /* Coloca el pseudo-elemento detrás del contenido */
+    transform: scalex(1.2);
+  
 }
 .section2-container {
     display: flex; /* Asegura que los elementos hijos (imagen y texto) estén en línea uno al lado del otro */
@@ -346,26 +346,33 @@ html {
 .section-3 {
     position: relative; /* Asegura que el pseudo-elemento se posicione relativo a .section-3 */
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
+    max-width: 100vw;
 }
 
 .section-3::before {
+    
     background: linear-gradient(to bottom, rgba(30, 58, 138, 1) 1%, rgba(30, 58, 138, 0) 10%), url(images/Foto2.jpg);
     background-size: cover;
     background-position: center;
     filter: blur(50px); /* Aplica el desenfoque */
     content: '';
     position: absolute;
-    top: -15%;
-    left: -15%;
-    right: -15%;
-    bottom: -15%;
+    top: -25%;
+    left: -4%;
+    right: -100%;
+    bottom: -20%;
     z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
-    clip-path: ellipse(110% 75% at 50% 10%); /* Borde curvado */
+    clip-path: ellipse(125% 75% at 50% 10%); /* Borde curvado */
+    overflow: hidden;
+        max-width: 100vw;
+        transform: scalex(1.2);
+
+
 }
 
 .articles {
@@ -381,30 +388,37 @@ article {
     flex: 1;
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
-    transition: all 0.4s ease-in-out;
-    padding: 16px; 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    padding: 20px; 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); 
     overflow: hidden;
-    background-color: #fff;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
 }
 
 .article-body {
     flex: 1;
-    padding: 16px;
-    background-color: #fff; 
-    border-radius: 8px; 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.article-body hr {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 10px 0;
+}
+
 .header-content {
-    position: relative;
     display: flex;
-    justify-content: center; /* Centra el h2 */
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .header-content h2 {
@@ -412,98 +426,74 @@ article {
     font-family: "Bebas Neue", cursive;
     font-size: 1.8rem;
     letter-spacing: 0.06em;
-    text-align: center; /* Centrado */
+    color: #333;
 }
 
 .header-content h3 {
     margin: 0;
-    position: absolute;
-    right: 0;
     font-family: "Bebas Neue", cursive;
-    font-size: 1.8rem;
-    letter-spacing: 0.06em;
-    text-align: right; /* Alineado a la derecha */
+    font-size: 1.6rem;
+    color: #FF4500;
 }
 
 .article-body ul {
-    list-style-type: disc; 
-    padding-left: 20px; 
-    margin-bottom: 0; 
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
 }
 
 .article-body ul li {
-    margin-bottom: 8px; 
-    font-size: 1.1rem; 
-    color: #555; 
-}
-
-.article-body {
-    padding: 16px;
-    background-color: #fff; 
-    border-radius: 8px; 
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
 }
 
 figure {
     margin: 0;
     padding: 0;
     aspect-ratio: 16 / 9;
-    overflow: hidden; 
-    border-radius: 8px; 
+    overflow: hidden;
+    border-radius: 8px;
 }
 
 article img {
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: auto;
     transform-origin: center;
     transition: transform 0.4s ease-in-out;
-    object-fit: cover; 
-    border-radius: 8px;
-    
-
+    object-fit: cover;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
-article:hover img {
-    transform: scale(1.1); 
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
 }
 
 .card-btn {
-    background-color: #FF4500; /* Color del botón */
-    color: white; /* Color del texto */
-    padding: 12px 24px; /* Espaciado interno */
-    border: none; /* Sin bordes */
-    border-radius: 8px; /* Bordes redondeados */
-    font-size: 16px; /* Tamaño de la fuente */
-    font-weight: bold; /* Negrita */
-    cursor: pointer; /* Cambia el cursor al pasar por encima */
-    margin-top: 20px; /* Espacio superior para separar del contenido */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
-    width: 100%; /* Ajusta el ancho del botón */
-    text-align: center; /* Centra el texto dentro del botón */
+    background-color: #FF4500;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    text-align: center;
 }
 
 .card-btn:hover {
-    background-color: #FF6347; /* Color más claro al pasar el cursor */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
-}
-
-@media screen and (max-width: 960px) {
-    .article-body p {
-        display: none;
-    }
+    background-color: #FF6347;
+    transform: scale(1.05);
 }
 
 
-.checklist {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.checklist li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
 
 .check-icon {
     display: inline-block;
@@ -511,13 +501,46 @@ article:hover img {
     height: 20px;
     border-radius: 50%;
     margin-right: 10px;
-    position: relative;
-    background-image: url('images/checkmark.png'); /* Ruta a tu ícono */
-    background-size: 12px 12px; /* Tamaño del ícono */
+    background-image: url('images/checkmark.png');
+    background-size: 12px 12px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+.platinum {
+    position: relative; /* Necesario para que el pseudo-elemento se posicione dentro del contenedor */
+    flex: 1.3; /* Aumenta el tamaño de la tarjeta del medio */
+
+}
+
+.platinum::before {
+    content: "POPULAR";
+    position: absolute;
+    top: 20px; /* Ajusta la posición vertical */
+    right: -40px; /* Ajusta la posición horizontal hacia la derecha */
+    transform: rotate(45deg); /* Cambia la rotación para que esté en diagonal hacia la derecha */
+    background-color: #FF4500;
+    color: white;
+    padding: 8px 55px;
+    font-size: 0.9rem;
+    font-family: "Bebas Neue", cursive;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 20;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Opcional: para darle un poco de sombra */
+    
+}
+
+@media screen and (max-width: 960px) {
+    .articles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-body ul {
+        padding-left: 20px;
+    }
+}
 
 
 /* ------------ SECTION-4 ------------ */
