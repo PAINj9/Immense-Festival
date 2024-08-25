@@ -7,6 +7,8 @@
 
 
 
+
+
 body {
     margin: 0;
     font-family: "Figtree", sans-serif;
@@ -260,14 +262,14 @@ html {
     align-items: center; /* Centra verticalmente los elementos hijos */
     max-height: 80%;
     width: 80%; /* Ajusta según el ancho deseado */
-    height: 80%; /* Ajusta según la altura deseada */
+    height: 67%; /* Ajusta según la altura deseada */
     border-radius: 20px; /* Bordes redondeados */
     overflow: hidden; /* Asegura que el contenido no se desborde */
-    background-color: rgba(48, 48, 48, 0.486);
+    background-color: rgba(48, 48, 48, 0.308);
 }
 
 .section2-image {
-    width: 40%; /* La imagen ocupa el 40% del ancho del contenedor */
+    width: 35%; /* La imagen ocupa el 40% del ancho del contenedor */
     height: 100%; /* La imagen ocupará todo el alto del contenedor */
     overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
     border-radius: 15px; /* Bordes redondeados en el contenedor */
@@ -289,8 +291,9 @@ html {
 }
 
 .section2-text {
+    padding-top: 1%;
     max-height: 100%;
-    width: 55%; /* Texto ocupa el 55% del ancho del contenedor */
+    width: 60%; /* Texto ocupa el 55% del ancho del contenedor */
     padding-left: 5%; /* Añade un pequeño espacio entre la imagen y el texto */
     padding-right: 2%;
     color: rgb(255, 255, 255); /* Asegura que el texto sea visible sobre el fondo */
@@ -316,6 +319,7 @@ html {
     line-height: 1.6; /* Espaciado entre las líneas de texto */
     margin-bottom: 1.5rem; /* Espaciado inferior entre el párrafo y el siguiente elemento */
     color: #f0f0f0; /* Color más claro para el párrafo */
+    
 }
 
 .section2-text h2 {
@@ -381,20 +385,22 @@ html {
     max-width: 1200px;
     margin-inline: auto;
     padding-inline: 24px;
-    gap: 24px;
+    gap: 54px;
 }
 
 article {
+    
+    border-bottom: 4px solid #FF4500; /* Borde inferior en color destacado */
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-radius: 12px;
     transition: all 0.3s ease;
     padding: 20px; 
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background-color: #ffffff;
-    border: 1px solid #e0e0e0;
 }
 
 .article-body {
@@ -482,7 +488,7 @@ article:hover {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: auto;
+    margin-top: auto; /* Empuja el botón hacia el fondo */
     transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
     text-align: center;
@@ -492,8 +498,6 @@ article:hover {
     background-color: #FF6347;
     transform: scale(1.05);
 }
-
-
 
 .check-icon {
     display: inline-block;
@@ -508,8 +512,10 @@ article:hover {
 }
 
 .platinum {
-    position: relative; /* Necesario para que el pseudo-elemento se posicione dentro del contenedor */
-    flex: 1.3; /* Aumenta el tamaño de la tarjeta del medio */
+    flex: 1.2; /* Aumenta el tamaño de la tarjeta del medio */
+    position: relative;
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    border-bottom: 4px solid #FF4500; /* Borde inferior en color destacado */
 
 }
 
@@ -531,6 +537,11 @@ article:hover {
     
 }
 
+.platinum:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.2); /* Sombra ligeramente más profunda */
+}
+
 @media screen and (max-width: 960px) {
     .articles {
         flex-direction: column;
@@ -542,29 +553,6 @@ article:hover {
     }
 }
 
-
-/* ------------ SECTION-4 ------------ */
-.section-4 {
-    min-height: 80vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.mapa {
-    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
-    max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho del viewport */
-    text-align: center; /* Centra el título dentro del contenedor */
-}
-
-.mapa iframe {
-    width: 100%; /* Asegura que el iframe ocupe todo el ancho del contenedor */
-    height: 600px; /* Fija la altura del iframe */
-    border-radius: 15px; /* Opcional: añade bordes redondeados al iframe */
-}
 
 
 /* ------------ Footer ------------ */
@@ -662,3 +650,7 @@ ul{
     width: 100%;
 }
 }
+
+
+
+
