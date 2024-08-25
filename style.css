@@ -38,6 +38,10 @@ html {
     opacity: .95; /* Reducido para menos opacidad */
 }
 
+.navbar-toggle {
+    display: none; /* Oculto por defecto */
+}
+
 .navbar-left {
     margin-left: 20px;
     display: flex;
@@ -56,6 +60,8 @@ html {
     justify-content: center;
     flex-grow: 1;
 }
+
+
 
 .nav-links {
     list-style-type: none;
@@ -81,6 +87,8 @@ html {
 .navbar-right {
     margin-right: 20px; /* Puedes ajustar el margen derecho según sea necesario */
 }
+
+
 
 .btn-buy-now {
     display: inline-block;
@@ -256,6 +264,7 @@ html {
     transform: scalex(1.2);
   
 }
+
 .section2-container {
     display: flex; /* Asegura que los elementos hijos (imagen y texto) estén en línea uno al lado del otro */
     justify-content: space-between; /* Distribuye el espacio entre los elementos hijos */
@@ -331,6 +340,15 @@ html {
     margin-bottom: 1.2rem;
 }
 
+.full-text {
+    display: block;
+}
+
+.short-text {
+    display: none;
+}
+
+
 .text-icon {
     width: 30px; /* Ajusta el tamaño del ícono */
     height: 30px;
@@ -356,6 +374,8 @@ html {
     align-items: center;
     padding: 20px;
     max-width: 100vw;
+    z-index: -1 ; /* Asegura que el pseudo-elemento esté detrás del contenido */
+
 }
 
 .section-3::before {
@@ -370,7 +390,7 @@ html {
     left: -4%;
     right: -100%;
     bottom: -20%;
-    z-index: -1; /* Asegura que el pseudo-elemento esté detrás del contenido */
+    z-index: -3; /* Asegura que el pseudo-elemento esté detrás del contenido */
     clip-path: ellipse(125% 75% at 50% 10%); /* Borde curvado */
     overflow: hidden;
         max-width: 100vw;
@@ -638,19 +658,299 @@ ul{
   background-color: #ffffff;
 }
 
-/*responsive*/
-@media(max-width: 767px){
-  .footer-col{
-    width: 50%;
-    margin-bottom: 30px;
-}
-}
-@media(max-width: 574px){
-  .footer-col{
-    width: 100%;
-}
-}
+
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------------------------*/
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------------------------*/
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------------------------*/
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------------------------*/
+/*--------------------------------------------------------- MEDIA QUERIES ---------------------------------------------------------*/
 
 
 
+/*------------------- NAVBAR -------------------*/
 
+@media (max-width: 375px) {
+    /* Ocultar el menú y mostrar el botón de hamburguesa en móviles */
+    .navegacion ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1a1f36;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 999;
+    }
+
+ .navegacion ul {
+        display: flex;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* Cuando el menú tiene la clase 'active', se despliega */
+    .navegacion.active ul {
+        max-height: 500px; /* Ajusta esta altura según el contenido del menú */
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .navbar-left {
+        margin-left: 20px; /* Reducir el margen izquierdo */
+    }
+
+    .navbar-right {
+        display: none; /* Ocultar el botón "Buy Now" para más espacio */
+    }
+
+    .navbar-logo {
+        height: 30px; /* Reducir el tamaño del logo */
+    }
+
+    .nav-links li a {
+        font-size: 16px; /* Reducir el tamaño de la fuente en los enlaces */
+        padding: 10px 0; /* Ajustar el padding para que sea más vertical */
+    }
+
+    .navbar-toggle {
+        display: block; /* Mostrar en móviles */
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+        padding-right: 50px;
+    }
+
+    .navbar-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/*------------------- SECTION1 -------------------*/
+
+
+@media (max-width: 375px) {
+    /* Ajustes para pantallas pequeñas como iPhone SE */
+    
+    .section-1 {
+        height: auto; /* Permite que la sección crezca según el contenido */
+        padding: 20px 0; /* Ajusta el padding superior e inferior */
+    }
+    
+    .section1-container {
+        flex-direction: column; /* Apila los elementos en lugar de alinearlos en línea */
+        width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+        height: auto; /* Permite que el contenedor crezca según el contenido */
+    }
+
+    .section1-image {
+        width: 80%; /* Reduce el tamaño de la imagen para que se ajuste mejor en pantallas pequeñas */
+        margin: 0 auto; /* Centra la imagen horizontalmente */
+        margin-top: 1rem;
+        margin-bottom: 10px; /* Agrega espacio debajo de la imagen */
+    }
+
+    .section1-text {
+        width: 100%; /* Asegura que el texto ocupe todo el ancho disponible */
+        padding-left: 0; /* Elimina el padding izquierdo para centrar el texto */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+
+    .section1-text h1 {
+        font-size: 2rem; /* Reduce el tamaño del encabezado para pantallas pequeñas */
+        margin-top: 1.5rem; /* Agrega espacio superior */
+        margin-bottom: 1rem; /* Mantén el margen inferior */
+    }
+
+    .section1-text p {
+        font-size: 1rem; /* Reduce el tamaño de la fuente del párrafo para mejorar la legibilidad */
+        margin-bottom: 1.5rem; /* Reduce el margen inferior para acercar a los botones */
+    }
+
+    .cta-buttons {
+        flex-direction: column; /* Apila los botones verticalmente en lugar de alinearlos horizontalmente */
+        gap: 0.5rem; /* Reduce el espacio entre botones */
+        align-items: center; /* Centra los botones horizontalmente */
+    }
+
+    .button {
+        width: 100%; /* Asegura que los botones ocupen todo el ancho disponible en pantallas pequeñas */
+        text-align: center; /* Centra el texto dentro de los botones */
+        padding: 0.75rem 1rem; /* Ajusta el padding interno de los botones */
+    }
+}
+
+
+/*------------------- SECTION-2 -------------------*/
+
+@media (max-width: 375px) {
+    .section-2 {
+        height: auto; /* Deja que la altura se ajuste automáticamente según el contenido */
+        padding: 20px 0; /* Añade un padding superior e inferior para evitar que el contenido se quede pegado */
+    }
+
+    .section-2::before {
+        top: 0; /* Ajusta la posición superior */
+        left: 0; /* Ajusta la posición izquierda */
+        right: 0; /* Ajusta la posición derecha */
+        bottom: 0; /* Ajusta la posición inferior */
+        transform: none; /* Elimina la transformación para evitar deformaciones */
+        filter: blur(50px); /* Reduce el desenfoque para mejorar la visibilidad */
+    }
+
+    .section2-container {
+        flex-direction: column; /* Apila el contenido en columna */
+        width: 90%; /* Reduce el ancho del contenedor */
+        height: auto; /* Deja que el contenedor crezca según el contenido */
+        padding: 20px; /* Ajusta el padding interno */
+        border-radius: 10px; /* Ajusta los bordes redondeados */
+    }
+
+    .section2-image {
+        width: 100%; /* Imagen ocupa todo el ancho disponible */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin-bottom: 20px; /* Espacio inferior para separar de la sección de texto */
+        border-radius: 10px; /* Ajusta los bordes redondeados */
+    }
+
+    .section2-text {
+        width: 100%; /* Texto ocupa todo el ancho disponible */
+        text-align: center; /* Centra el texto */
+        padding-left: 0; /* Elimina el padding izquierdo */
+        padding-right: 0; /* Elimina el padding derecho */
+    }
+
+    .section2-text h1 {
+        font-size: 2.5rem; /* Reduce el tamaño del título */
+        margin-top: 1rem; /* Añade espacio superior al título */
+        margin-bottom: 1rem; /* Ajusta el margen inferior */
+        letter-spacing: 0.05rem; /* Ajusta el espaciado entre letras */
+        line-height: 3rem;
+    }
+
+    .section2-text p {
+        font-size: 1rem; /* Reduce el tamaño de la fuente para mejorar la legibilidad */
+        line-height: 1.5; /* Ajusta la altura de línea */
+        margin-bottom: 1rem; /* Ajusta el espaciado inferior */
+    }
+
+    .section2-text h2 {
+        font-size: 1.4rem; /* Reduce el tamaño del subtítulo */
+        margin-bottom: 1rem; /* Ajusta el espaciado inferior */
+        justify-content: center; /* Centra el contenido si es necesario */
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+
+    }
+
+    .text-icon {
+        width: 25px; /* Ajusta el tamaño del ícono */
+        height: 25px; /* Ajusta la altura del ícono */
+    }
+
+    .full-text {
+        display: none;
+    }
+
+    .short-text {
+        display: block;
+    }
+}
+
+
+/*------------------- SECTION-3 -------------------*/
+
+@media (max-width: 375px) {
+    .section-3 {
+        height: auto; /* Ajusta la altura automáticamente según el contenido */
+        padding: 20px 10px; /* Reduce el padding lateral en pantallas pequeñas */
+        min-height: 100vh; /* Mantiene un mínimo de altura igual a la pantalla */
+    }
+
+    .section-3::before {
+        top: 0; /* Ajusta la posición superior del pseudo-elemento */
+        left: 0; /* Ajusta la posición izquierda del pseudo-elemento */
+        right: 0; /* Ajusta la posición derecha del pseudo-elemento */
+        bottom: 0; /* Ajusta la posición inferior del pseudo-elemento */
+        clip-path: none; /* Elimina el recorte de elipse en pantallas pequeñas */
+        transform: none; /* Elimina la transformación en pantallas pequeñas */
+        filter: blur(30px); /* Reduce el desenfoque en pantallas pequeñas */
+
+    }
+}
+
+/*------------------- NAVBAR -------------------*/
+
+@media (max-width: 375px) {
+    .footer {
+        background-color: #24262b;
+        padding: 50px 10px; /* Reducir el padding superior/inferior y ajustar los laterales */
+    }
+
+    .footer-col {
+        width: 100%; /* Cada columna ocupa todo el ancho disponible */
+        margin-bottom: 20px; /* Reducir el margen inferior de las columnas */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .footer-col h4 {
+        font-size: 16px; /* Reducir el tamaño del título */
+        color: #ffffff;
+        text-transform: capitalize;
+        margin-bottom: 15px; /* Reducir el margen inferior del título */
+        font-weight: 500;
+        position: relative;
+    }
+
+    .footer-col h4::before {
+        content: '';
+        position: absolute;
+        left: 50%; /* Centrar la línea */
+        transform: translateX(-50%);
+        bottom: -10px;
+        background-color: #e91e63;
+        height: 2px;
+        width: 40px; /* Reducir la longitud de la línea */
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px; /* Reducir el espacio entre los elementos de la lista */
+    }
+
+    .footer-col ul li a {
+        font-size: 14px; /* Reducir ligeramente el tamaño de la fuente */
+        text-transform: capitalize;
+        color: #bbbbbb;
+        text-decoration: none;
+        font-weight: 300;
+        display: block;
+        transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 5px; /* Reducir el padding en el hover */
+    }
+
+    .footer-col .social-links a {
+        display: inline-block;
+        height: 35px; /* Reducir el tamaño de los íconos sociales */
+        width: 35px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin: 5px; /* Reducir los márgenes para acomodar mejor los íconos en pantalla pequeña */
+        text-align: center;
+        line-height: 35px;
+        border-radius: 15%;
+        color: #ffffff1c;
+        transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+        color: #24262b;
+        background-color: #ffffff;
+    }
+}
