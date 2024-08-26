@@ -221,22 +221,21 @@ html {
     align-items: center;
     background-size: cover;
     background-position: center;
-    opacity: 1;
-    
+    overflow: hidden;
 }
 
 .section-2::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 7%;
+    left: -15%;
+    right: -25%;
+    bottom: -5%;
     background-image: url(images/Test2.jpg);
     background-size: cover;
     background-position: center;
+    filter: blur(70px);
     z-index: -1;
-    filter: blur(70px); /* Si decides mantener el blur */
     transform: scalex(1.2);
 }
 
@@ -244,10 +243,11 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-height: 100%;
+    max-height: 80%;
     width: 80%;
     height: 67%;
     border-radius: 20px;
+    overflow: hidden;
     background-color: rgba(48, 48, 48, 0.308);
 }
 
@@ -344,8 +344,7 @@ html {
     align-items: center;
     padding: 20px;
     max-width: 100vw;
-    z-index: 0;
-    
+    z-index: 1;
 }
 
 .section-3::before {
@@ -354,13 +353,14 @@ html {
     background-position: center;
     filter: blur(50px);
     content: '';
-    position:absolute;
-    top: -17%;
+    position: absolute;
+    top: -16%;
     left: -4%;
     right: -100%;
-    bottom: -14%;
-    z-index: -1;
+    bottom: -16%;
+    z-index: -3;
     clip-path: ellipse(125% 75% at 50% 10%);
+    overflow: hidden;
     max-width: 100vw;
     transform: scalex(1.2);
 }
@@ -381,19 +381,18 @@ article {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 5.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones para suavizar la animación */
     padding: 20px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     background-color: #ffffff;
-    position: relative;
 }
 
 article:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
-
+    transform: translateY(-10px) scale(1.05); /* Eleva la tarjeta y aumenta su tamaño ligeramente */
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para un efecto más profundo */
 }
+
 
 .article-body {
     flex: 1;
@@ -529,6 +528,16 @@ article img {
     box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 960px) {
+    .articles {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-body ul {
+        padding-left: 20px;
+    }
+}
 
 /* ------------ Footer ------------ */
 
