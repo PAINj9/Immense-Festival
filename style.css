@@ -813,6 +813,10 @@ ul{
         height: auto;
         padding: 20px 10px;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+        justify-content: center;
+        align-items: center;
     }
 
     .section-3::before {
@@ -820,9 +824,36 @@ ul{
         left: 0;
         right: 0;
         bottom: 0;
-        clip-path: none;
-        transform: none;
-        filter: blur(30px);
+        clip-path: none; /* Elimina cualquier recorte de imagen para pantallas pequeñas */
+        transform: none; /* Elimina cualquier transformación en pantallas pequeñas */
+        filter: blur(30px); /* Reduce el blur para mejorar la visibilidad */
+        z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+    }
+
+    .articles {
+        display: flex;
+        flex-direction: column; /* Apila las tarjetas verticalmente */
+        align-items: center;
+        width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        padding-inline: 10px; /* Ajusta el padding lateral */
+        gap: 15px; /* Espacio reducido entre las tarjetas */
+    }
+
+    article {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 10px; /* Ajusta el padding interno para pantallas pequeñas */
+        border-radius: 8px; /* Mantiene los bordes redondeados */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para un diseño limpio */
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+    }
+
+    article img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+        border-radius: 8px;
+        transition: transform 0.4s ease-in-out;
     }
 }
 
@@ -1098,13 +1129,25 @@ ul{
     }
 
     .section-3::before {
-        top: 0; 
-        left: 0; 
-        right: 0; 
-        bottom: 0; 
-        clip-path: none; 
-        transform: none; 
-        filter: blur(30px); 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        clip-path: none;
+        transform: none;
+        filter: blur(30px);
+    }
+
+    .articles {
+        flex-direction: column;
+        align-items: center;
+        padding-inline: 10px; /* Reducir el padding en los lados */
+        gap: 50px; /* Reducir el espacio entre las tarjetas */
+    }
+
+    article {
+        padding: 10px; /* Reducir el padding para pantallas pequeñas */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Reducir la sombra */
     }
 }
 
